@@ -1,0 +1,98 @@
+﻿<Page
+    x:Class="MultiCrono.WindowsStore.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MultiCrono.WindowsStore"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+	<Page.Resources>
+		<Storyboard x:Name="Storyboard1">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="grdTimer">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="-100.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="grdTimer">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="40.5"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="Storyboard2">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="grdTimer">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Thickness>513,239,0,0</Thickness>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1">
+					<DiscreteObjectKeyFrame.Value>
+						<Thickness>0</Thickness>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="grdTimer">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="31.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="grdTimer">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="304.5"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</Page.Resources>
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    	<VisualStateManager.VisualStateGroups>
+    		<VisualStateGroup x:Name="ApplicationViewStates">
+    			<VisualState x:Name="FullScreenLandscape"/>
+    			<VisualState x:Name="VisualStateSnapped">
+    				<Storyboard>
+    					<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="grdTimer">
+    						<DiscreteObjectKeyFrame KeyTime="0">
+    							<DiscreteObjectKeyFrame.Value>
+    								<Thickness>0,30,0,0</Thickness>
+    							</DiscreteObjectKeyFrame.Value>
+    						</DiscreteObjectKeyFrame>
+    						<DiscreteObjectKeyFrame KeyTime="0:0:1">
+    							<DiscreteObjectKeyFrame.Value>
+    								<Thickness>24,271,0,0</Thickness>
+    							</DiscreteObjectKeyFrame.Value>
+    						</DiscreteObjectKeyFrame>
+    					</ObjectAnimationUsingKeyFrames>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="Filled">
+    				<Storyboard>
+    					<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="grdTimer">
+    						<DiscreteObjectKeyFrame KeyTime="0">
+    							<DiscreteObjectKeyFrame.Value>
+    								<Thickness>0,30,0,0</Thickness>
+    							</DiscreteObjectKeyFrame.Value>
+    						</DiscreteObjectKeyFrame>
+    						<DiscreteObjectKeyFrame KeyTime="0:0:1">
+    							<DiscreteObjectKeyFrame.Value>
+    								<Thickness>392,269,0,0</Thickness>
+    							</DiscreteObjectKeyFrame.Value>
+    						</DiscreteObjectKeyFrame>
+    					</ObjectAnimationUsingKeyFrames>
+    				</Storyboard>
+    			</VisualState>
+    		</VisualStateGroup>
+    	</VisualStateManager.VisualStateGroups>
+    	<Grid x:Name="grdTimer" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0" RenderTransformOrigin="0.5,0.5">
+    		<Grid.RenderTransform>
+    			<CompositeTransform/>
+    		</Grid.RenderTransform>
+            <MediaElement x:Name="MediaControl" Margin="0" />
+            <Button Command="{Binding buttonCommand}" x:Name="BtnStart" DataContext="{Binding BtnStart}"  Content="{Binding Description}" HorizontalAlignment="Left"  Margin="90,182,0,0" VerticalAlignment="Top" Width="95" />
+            <TextBox x:Name="TxtCrono" Margin="9,56,0,0" TextWrapping="Wrap" Text="{Binding TxtCrono}" Background="{x:Null}" Foreground="White" TextAlignment="Center" VerticalAlignment="Top" BorderBrush="{x:Null}" FontFamily="Quartz MS" FontSize="48" Height="77" HorizontalAlignment="Left" Width="264"/>
+            <Button Command="{Binding buttonCommand}" x:Name="Btn1Up" DataContext="{Binding Btn1Up}" IsEnabled="{Binding IsEnabled}" Content="A" HorizontalAlignment="Left" Height="39" Margin="9,17,0,0" VerticalAlignment="Top" Width="88"/>
+            <Button Command="{Binding buttonCommand}" x:Name="Btn2Up" DataContext="{Binding Btn2Up}" IsEnabled="{Binding IsEnabled}" Content="A" HorizontalAlignment="Left" Height="39" Margin="97,17,0,0" VerticalAlignment="Top"  Width="88"/>
+            <Button Command="{Binding buttonCommand}" x:Name="Btn3Up" DataContext="{Binding Btn3Up}" IsEnabled="{Binding IsEnabled}" Content="A" HorizontalAlignment="Left" Height="39" Margin="185,17,0,0" VerticalAlignment="Top" Width="88"/>
+            <Button Command="{Binding buttonCommand}" x:Name="Btn1Down" DataContext="{Binding Btn1Down}" IsEnabled="{Binding IsEnabled}" Content="V" HorizontalAlignment="Left" Height="39" Margin="9,138,0,0" VerticalAlignment="Top" Width="88" />
+            <Button Command="{Binding buttonCommand}" x:Name="Btn2Down" DataContext="{Binding Btn2Down}" IsEnabled="{Binding IsEnabled}" Content="V" HorizontalAlignment="Left" Height="39" Margin="97,138,0,0" VerticalAlignment="Top" Width="88"/>
+            <Button Command="{Binding buttonCommand}" x:Name="Btn3Down" DataContext="{Binding Btn3Down}" IsEnabled="{Binding IsEnabled}" Content="V" HorizontalAlignment="Left" Margin="185,138,0,0" VerticalAlignment="Top"  Width="88" Height="39"/>
+            <Button Command="{Binding buttonCommand}" x:Name="BtnReset"  DataContext="{Binding BtnReset}" IsEnabled="{Binding IsEnabled}" Content="Reset&#xA;" HorizontalAlignment="Left" Margin="185,182,0,0" VerticalAlignment="Top" Width="88" Height="38" />
+        </Grid> 
+    </Grid>
+</Page>
