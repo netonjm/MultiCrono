@@ -70,51 +70,6 @@ namespace MultiCrono.WindowsStore
             CommonDispatcher.BeginInvoke(() => SoundHelper.PlaySound1(MediaControl));
         }
 
-        private void btnStart_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModel.CronoManager.StartStop();
-        }
-
-        private void btnReset_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModel.CronoManager.ResetCount();
-        }
-
-   
-        #region ButtonsAdd
-
-        private void btn1Up_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModel.CronoManager.AddTime(CronoManager.TimeType.Hours, true);
-        }
-
-        private void btn2Up_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModel.CronoManager.AddTime(CronoManager.TimeType.Minutes, true);
-        }
-
-        private void btn3Up_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModel.CronoManager.AddTime(CronoManager.TimeType.Seconds, true);
-        }
-
-        private void btn1Down_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModel.CronoManager.AddTime(CronoManager.TimeType.Hours, false);
-        }
-
-        private void btn2Down_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModel.CronoManager.AddTime(CronoManager.TimeType.Minutes, false);
-        }
-
-        private void btn3Down_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModel.CronoManager.AddTime(CronoManager.TimeType.Seconds, false);
-        }
-
-        #endregion
-
        
     }
 }

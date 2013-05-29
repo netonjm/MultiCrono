@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using MultiCrono.Common;
 using Windows.Extensions.Handlers;
-using MultiCrono.ViewModels;
 using Windows.Extensions.Helpers;
 
 

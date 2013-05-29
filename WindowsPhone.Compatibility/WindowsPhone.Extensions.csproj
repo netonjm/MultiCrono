@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Handler\CommonDispatcher.cs" />
     <Compile Include="Compatibility\Handler\DispatcherHandler.cs" />
+    <Compile Include="Handler\DispatchAdapter.cs" />
     <Compile Include="Handler\TimerHandler.cs" />
     <Compile Include="Helpers\SoundHelper.cs" />
     <Compile Include="Helpers\ToastHelper.cs" />
